@@ -19,6 +19,7 @@ import StatusMessage from "./components/StatusMessage";
 import Toast from "./components/templateLiterals/Toast";
 import CustomButton from "./components/html/CustomButton";
 import CustomComponent from "./components/html/CustomComponent";
+import Component from "./components/polymorphic/Component";
 
 function App() {
   const personName = {
@@ -84,6 +85,16 @@ function App() {
       <Toast position="right-center" />
       <CustomButton variant="primary">Hello world!</CustomButton>
       <CustomComponent name="jaseem" />
+      <Component
+        size="md"
+        color="primary"
+        as="button"
+        onClick={() => {
+          console.log("clicked the button!");
+        }}
+      >
+        hello world
+      </Component>
     </div>
   );
 }
