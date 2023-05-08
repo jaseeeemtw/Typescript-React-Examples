@@ -3,15 +3,22 @@ import Box from "./components/Box";
 import Button from "./components/Button";
 import Container from "./components/Container";
 import ContextExampleElement from "./components/context/ContextExampleElement";
+import ListExample from "./components/generics/ListExample";
 import Greet from "./components/Greet";
 import Heading from "./components/Heading";
 import Input from "./components/Input";
 import Person from "./components/Person";
 import PersonList from "./components/PersonList";
 import CountReducerExample from "./components/reducer/CountReducerExample";
+import MutableRef from "./components/ref/MutableRef";
+import RefExample from "./components/ref/RefExample";
+import RandomNumber from "./components/restrictingProps/RandomNumber";
 import LoggedIn from "./components/state/LoggedIn";
 import User from "./components/state/User";
 import StatusMessage from "./components/StatusMessage";
+import Toast from "./components/templateLiterals/Toast";
+import CustomButton from "./components/html/CustomButton";
+import CustomComponent from "./components/html/CustomComponent";
 
 function App() {
   const personName = {
@@ -60,6 +67,23 @@ function App() {
       <User />
       <CountReducerExample />
       <ContextExampleElement />
+      <RefExample />
+      <MutableRef />
+      <ListExample
+        items={[
+          { id: 1, name: "name1" },
+          { id: 4, name: "name4" },
+          { id: 2, name: "name2" },
+          { id: 3, name: "name3" },
+        ]}
+        onClick={(item) => {
+          console.log("name is : " + item.name);
+        }}
+      />
+      <RandomNumber value={5} isPositive />
+      <Toast position="right-center" />
+      <CustomButton variant="primary">Hello world!</CustomButton>
+      <CustomComponent name="jaseem" />
     </div>
   );
 }
